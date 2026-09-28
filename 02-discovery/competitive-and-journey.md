@@ -4,7 +4,7 @@
 - **Role, who are you solving for? (the specific user segment or profile):** A fleet dispatcher at a mid-size 3PL.
 - **Goal, what is this user ultimately trying to achieve?:** To reassign routes and have drivers act on the change right away.
 - **Friction, the main barrier (moment of misery) stopping them from succeeding:** I reassign a route and the driver doesn't see it for ten, fifteen minutes. By then they've driven the wrong way. We keep a WhatsApp group as the real system
-- **External tools, the outside platforms or tools the user is forced to use:** They use Whatsup instead of the system
+- **External tools, the outside platforms or tools the user is forced to use:** They use Whatsapp instead of the system
 - **The process, the 3 to 5 manual steps the user takes to get the job done:** 1 - The dispatcher reassigns the route in RouteLogic
 2 - The change doesn't reach the driver.
 3 - The driver keeps following the old route.
