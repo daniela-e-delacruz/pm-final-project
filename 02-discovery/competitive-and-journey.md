@@ -1,57 +1,18 @@
-# Future-State Journey: Compliance Logging in RouteLogic
+# Competitive Analysis & Journey Map (Module 2)
 
-> **Note:** This future state is built on a hypothetical persona and is pending validation through targeted coordinator interviews.
+## Responses
+- **Role, who are you solving for? (the specific user segment or profile):** A real-time fleet coordinator who keeps daily operations running and is responsible for logging compliance checks during her shift.
+- **Goal, what is this user ultimately trying to achieve?:** To keep compliance records up to date in RouteLogic without slowing down the operations she coordinates.
+- **Friction, the main barrier (moment of misery) stopping them from succeeding:** To keep compliance records up to date in RouteLogic without slowing down the operations she coordinates.
 
-## Context
+Friction: When she logs a compliance check during her shift, she has to go through four screens while other operational tasks are waiting. By the fourth screen, time pressure pushes her out of RouteLogic, and she switches to a spreadsheet to load the checks later. As a result, compliance records reach RouteLogic late, and the executive team loses the real-time view it needs to make decisions.
+- **External tools, the outside platforms or tools the user is forced to use:** The user pivots to a spreadsheet.
+- **The process, the 3 to 5 manual steps the user takes to get the job done:** 1 - During her shift, she starts logging a compliance check in RouteLogic.
+2 - She moves through the logging screens while other operational tasks wait for her attention.
+3 - At the fourth screen, under time pressure, she abandons the flow and leaves RouteLogic.
+4 - She records the compliance check in a spreadsheet so she can return to operations.
+5 - Later, she transfers the checks from the spreadsheet into RouteLogic.
+- **Core frustration, the exact moment the process feels most “broken”:** The work is done more than once. The time spent on the abandoned screens is lost, the check is recorded in the spreadsheet, and then it has to be entered again in RouteLogic. The workaround postpones the administrative burden instead of removing it, and adds a manual transfer step.
+- **The evidence, a specific quote or behavior from the research that proves this:** This workaround is part of the hypothetical persona. The spreadsheet behavior comes from the Problem Hook and has not yet been observed in the current interviews or bug reports. However, the Executive Summary supports the underlying mechanism in two ways. First, frontline users rely on only a small part of the product and struggle to find it (UXR-04), and they move core tasks to external tools such as texting, WhatsApp groups, and paper manifests (UXR-01, UXR-02, UXR-12). Second, multiple independent sources show that frontline data reaches management late or unreliably, through dashboard lag (BUG-2072, UXR-09), delayed reassignments (BUG-2044), and failed proof-of-delivery uploads (BUG-2061). This makes the compliance workaround plausible and suggests the real-time data gap is systemic, but it does not validate compliance logging as the specific cause.
+- **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):** https://github.com/daniela-e-delacruz/pm-final-project/blob/6a09e42798c83e8053404378c94fe9e388d3979b/02-discovery/competitive-and-journey.md
 
-**Persona:** A real-time fleet coordinator who keeps daily operations running and is responsible for logging compliance checks during her shift.
-
-**Goal:** To keep compliance records up to date in RouteLogic without slowing down the operations she coordinates.
-
-**Strategy:** Reclaim operational simplicity by stripping away legacy noise and ensuring the tool is the fastest for everyday work.
-
-**Value Proposition:** For real-time fleet coordinators, we will allow them to register compliance checks within RouteLogic, keeping advanced enterprise features available but out of their way, because this process is an administrative burden that affects real-time operations and the statistics the executive team uses to make decisions now, giving competitors an opportunity to win our biggest account.
-
-## Visual Timeline
-
-```mermaid
-flowchart LR
-    S1["<b>1. Check is due</b><br/>Starts in app"] --> S2["<b>2. Quick log</b><br/>Stays in app"]
-    S2 --> S3["<b>3. Back to work</b><br/>No backlog"]
-    S3 --> S4["<b>4. Live records</b><br/>Execs see it"]
-
-    classDef coordinator fill:#E1F5EE,stroke:#0F6E56,color:#085041
-    classDef executive fill:#EEEDFE,stroke:#534AB7,color:#3C3489
-    class S1,S2,S3 coordinator
-    class S4 executive
-```
-
-*Teal: coordinator experience. Purple: executive outcome.*
-
-## Stages
-
-1. **Check is due**
-   - **User Action:** Opens compliance logging from her daily workspace → starts without searching through menus.
-   - **Internal State:** Feels time pressure → trusts the task will fit her shift.
-   - **Pain Point Addressed:** Compliance logging buried under enterprise features she rarely uses.
-
-2. **Quick log**
-   - **User Action:** Completes the compliance check inside RouteLogic → finishes before operations pull her away.
-   - **Internal State:** Stays focused on the task → no urge to switch to a spreadsheet.
-   - **Pain Point Addressed:** The four-screen flow that pushed her out at the fourth screen.
-
-3. **Back to work**
-   - **User Action:** Confirms the check is saved → returns to operations with nothing pending.
-   - **Internal State:** Feels relieved → no checks left to transfer later.
-   - **Pain Point Addressed:** Shadow spreadsheet log and later manual re-entry into RouteLogic.
-
-4. **Live records**
-   - **User Action:** Moves on to her next task → compliance records are already available to executives.
-   - **Internal State:** Trusts RouteLogic as the system of record → stops keeping backups.
-   - **Pain Point Addressed:** Late compliance records and the executives' lost real-time view.
-
-## Competitive Advantages Over the Manual Workaround
-
-1. **Single entry:** Each check is logged once, eliminating duplicate work and manual transfer.
-2. **Real-time data:** Compliance records reach RouteLogic immediately, keeping executive reporting current.
-3. **One system of record:** Data stays inside RouteLogic, removing the shadow spreadsheet and its risk of omissions.
