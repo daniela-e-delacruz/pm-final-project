@@ -24,26 +24,26 @@ Guardrails: Manager CSAT for Compliance stays at 3.9 or higher, and Compliance C
 
 Screens:
 
-Home: the coordinator's shift view with a "Log compliance check" action next to each active route.
-Core: the full compliance check in one screen: pre-filled data, pass or fail for each item, a review section and collapsed enterprise fields.
-Confirmation: a success message with the time the check was saved and a button to go back to the shift view.
+- Home: the coordinator's shift view with a "Log compliance check" action next to each active route.
+- Core: the full compliance check in one screen: pre-filled data, pass or fail for each item, a review section and collapsed enterprise fields.
+- Confirmation: a success message with the time the check was saved and a button to go back to the shift view.
 
 Functional requirements:
 
-The system must open the compliance check in one tap from the shift view.
-The system must pre-fill driver, vehicle, route and date from the active shift.
-The system must let the coordinator complete the full check without leaving the core screen.
-The system must require a reason for every failed item before the check can be submitted.
-The system must show all pre-filled values for review before submitting.
-The system must keep advanced enterprise compliance fields collapsed by default and open them in one tap.
-The system must save the check with a timestamp as soon as it is submitted, in the same compliance record managers use today.
+- The system must open the compliance check in one tap from the shift view.
+- The system must pre-fill driver, vehicle, route and date from the active shift.
+- The system must let the coordinator complete the full check without leaving the core screen.
+- The system must require a reason for every failed item before the check can be submitted.
+- The system must show all pre-filled values for review before submitting.
+- The system must keep advanced enterprise compliance fields collapsed by default and open them in one tap.
+- The system must save the check with a timestamp as soon as it is submitted, in the same compliance record managers use today.
 - **Isolation check, what has NOT changed? list everything identical between arms (app version, recommendation engine, notifications, onboarding). If something changed inadvertently, your test is compromised.:** Everything except the compliance logging flow stays identical between both groups:
 
-Product: same RouteLogic version, same features outside compliance, same notifications and same shift view (except the new "Log compliance check" action in B).
-Checklist content: the same compliance items to review and the same required fields, including the enterprise fields, which are only collapsed in B, not removed.
-Data: both groups save the check in the same compliance record managers use today, and completion is measured the same way in both groups.
-Workload: random assignment by coordinator should keep the amount of data to load and the active hours similar between groups. I will check that both groups are balanced before reading the results.
-Communication: no training or announcements about the new flow during the test. The CS lead only supports the B group with the new flow if needed, and does not tell coordinators in group A about the change, so their behavior doesn't change.
+- Product: same RouteLogic version, same features outside compliance, same notifications and same shift view (except the new "Log compliance check" action in B).
+- Checklist content: the same compliance items to review and the same required fields, including the enterprise fields, which are only collapsed in B, not removed.
+- Data: both groups save the check in the same compliance record managers use today, and completion is measured the same way in both groups.
+- Workload: random assignment by coordinator should keep the amount of data to load and the active hours similar between groups. I will check that both groups are balanced before reading the results.
+- Communication: no training or announcements about the new flow during the test. The CS lead only supports the B group with the new flow if needed, and does not tell coordinators in group A about the change, so their behavior doesn't change.
 
 ## Formalize your hypothesis & shipping criteria
 - **Your hypothesis (filled in):** I believe that the B1 One-Click Compliance Checklist for real-time fleet coordinators will result in them completing compliance checks inside RouteLogic during their shift instead of moving them to a spreadsheet, as measured by a 23 percentage point increase (from 48% to 71%) in the percentage of coordinators who complete Log Compliance Checks within 15 days. We will protect Manager CSAT for Compliance (3.9 or higher) and Compliance Checklist adoption among coordinators (77% or higher) throughout the test.
