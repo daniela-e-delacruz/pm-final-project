@@ -181,7 +181,7 @@ function Core({route,onCancel,onSubmit}){
       <h1>Compliance check · {route.id}</h1>
       <span className="timer" aria-live="off">Time on this check {fmt(secs)}</span>
     </div>
-    <p className="sub">{route.account}. Review what's pre-filled, mark each item and submit.</p>
+    <p className="sub">{route.account.replace(/\.$/,"")}. Review what's pre-filled, mark each item and submit.</p>
 
     {tried && problems.length>0 && <div className="summary" role="alert">{problems.length} {problems.length===1?"thing is":"things are"} missing. Check the highlighted fields below.</div>}
 
@@ -201,7 +201,13 @@ function Core({route,onCancel,onSubmit}){
     </div>
 
     <div className="panel">
-      <h3>Checklist</h3>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:"1rem",flexWrap:"wrap"}}>
+        <h3>Checklist</h3>
+        <span className="sub" style={{margin:0}} aria-live="polite">{results.filter(r=>r!==null).length} of {ITEMS.length} items marked</span>
+      </div>
+      <div role="progressbar" aria-label="Checklist progress" aria-valuemin={0} aria-valuemax={ITEMS.length} aria-valuenow={results.filter(r=>r!==null).length} style={{height:"6px",borderRadius:"999px",background:"rgba(127,127,127,.25)",margin:"0 0 .9rem",overflow:"hidden"}}>
+        <div style={{height:"100%",width:(results.filter(r=>r!==null).length/ITEMS.length*100)+"%",background:"currentColor",opacity:.7,transition:"width .2s"}}></div>
+      </div>
       {ITEMS.map((txt,i)=>(
         <div className="item" key={i}>
           <div className="itemrow">
