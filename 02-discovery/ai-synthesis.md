@@ -5,7 +5,8 @@
 An enterprise ops manager watches her frontline team work in RouteLogic every day. They need only a small part of the product, about 5%, but they can't find it among everything else. Instead of pushing her team to adapt, she starts evaluating a leaner competitor that just does routing well. The platform still works, but the account that pays for all of it is now looking for the exit.
 - **Moment of misery / red flag #2:** BUG-2079 · Sev: Medium
 At the start of a shift, a real-time fleet coordinator needs to get routes moving. But after recent feature additions, Start Route is now buried two or three levels deep, and there is no way to set a home screen with the actions she uses most. Every route begins with a search through menus built for other users. The route eventually starts, but time-sensitive work is delayed by navigation, not by operations.
-- **Moment of misery / red flag #3:** A driver with six years on RouteLogic needs to start a route, something he does about 30 times a day. After every update, the button he needs sits deeper, buried under features he has never touched, because each release adds something and nothing gets removed. Thirty times a day, he digs through the same menus to reach the one action his job depends on. The route starts, but the most repeated task of his day keeps getting slower with each new version.
+- **Moment of misery / red flag #3:** UXR-11 · Driver, 6 yrs
+A driver with six years on RouteLogic needs to start a route, something he does about 30 times a day. After every update, the button he needs sits deeper, buried under features he has never touched, because each release adds something and nothing gets removed. Thirty times a day, he digs through the same menus to reach the one action his job depends on. The route starts, but the most repeated task of his day keeps getting slower with each new version.
 - **Product Health & Insights Summary (Claude's output):** Product Health & Insights Summary
 Executive Summary
 
@@ -49,14 +50,10 @@ Medium: Manual overrides cannot be saved, so drivers repeat the same corrections
 
 Minor Technical Debt: GPS pin drift of up to 200 m in dense urban areas triggers false "arrived at stop" detection, and the onboarding tutorial cannot be reopened after first launch, with no in-app guidance for reporting a failed delivery.
 
-
-
-
-Claude es IA y puede cometer errores. Por favor, verifica las respuestas.
-- **Did the AI catch the specific moment of misery / pain point you found in Step 1?:** Partially. It captured core actions buried 2–3 levels deep, but lost the driver's own voice: "the 'start route' I use 30 times a day" became a generic "highest-frequency actions", dropping the frequency that shows this is systemic.
-- **Did it smooth over a critical frustration into a generic bullet point?:** Yes. It upgraded BUG-2079 from Medium to High without explaining why, turned one enterprise ops manager (UXR-04) into "enterprise accounts", and claimed drivers "unanimously" prioritize core speed, which none of my three standouts state.
+- **Did the AI catch the specific moment of misery / pain point you found in Step 1?:** Partially. It captured that core actions like Start Route sit two to three levels deep (BUG-2079), and that an enterprise account is evaluating a leaner competitor (UXR-04). But it lost the users' own words: the driver's "the 'start route' I use 30 times a day" (UXR-11) became a generic "high-frequency actions", and the ops manager's "maybe 5%" became "a small share". Those numbers are what show the problem is systemic.
+- **Did it smooth over a critical frustration into a generic bullet point?:** Yes. It took specific moments from single people and turned them into broad statements: one dispatcher's WhatsApp group (UXR-02) became "dispatch operations have shifted to external tools", and one driver's daily screenshots (UXR-06) became "drivers capture daily route screenshots".
 - **Did the AI try to suggest features or a roadmap despite the constraints?:** No. It stayed descriptive. Some items mention what is missing (a configurable home screen, a retry queue), but those come from the bug reports, not from AI recommendations.
 - **Logic leak / hallucination #1 (e.g., “AI suggested a new search bar feature, roadmap leak”):** Logic leak #1:
-The AI upgraded BUG-2079 from Medium to High without saying why. Even if it combined the bug with interviews like UXR-11, re-rating severity is my judgment call, not the AI's, and it presented the High as if it were the original data.
+The AI assigned severity to findings that only come from interviews, with no bug report behind them. It rated the drivers' distrust of the app (UXR-12), the move to WhatsApp (UXR-02) and the 5% usage (UXR-04) as High, and presented those ratings as if they were part of the data. Deciding severity for research findings is my judgment call, not the AI's.
 - **Logic leak / hallucination #2:** Logic leak #2:
-The AI overgeneralized the evidence. It turned one enterprise ops manager (UXR-04) into "enterprise accounts" evaluating competitors, and claimed drivers "unanimously" prioritize core speed, which none of my three standouts state.
+The AI overgeneralized the evidence. It turned one enterprise ops manager (UXR-04) into "enterprise accounts" open to competitors, one dispatcher (UXR-02) into "dispatch operations", and a focus group of seven drivers (UXR-12) into "frontline users consistently prioritize speed of core actions". The pattern may be real, but the summary claims more reach than the research supports.
